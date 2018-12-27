@@ -1,7 +1,16 @@
-v = VideoReader('TrackingData/Metroid.mp4');
+vidObj = VideoReader('TrackingData/Metroid.mp4');
+vidObj.CurrentTime = 40.1; % 35 start
 
-while hasFrame(v)
-    frame = readFrame(v);
-end
+currAxes = axes;
+%while hasFrame(vidObj)
+    vidFrame = readFrame(vidObj);
+    image(vidFrame, 'Parent', currAxes);
+    currAxes.Visible = 'on';
+    pause(1/vidObj.FrameRate);
+%end
 
-whos frame
+
+%Samus
+rgb = vidFrame(241:288,220:255,:);
+
+imshow(rgb)
