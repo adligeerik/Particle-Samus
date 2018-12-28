@@ -13,7 +13,8 @@ currAxes = axes;
 %Samus 
 rgb = vidFrame(241:288,220:255,:);
 
-
+%%
+cutSamus(vidFrame)
 %% Kmeans samus
 k = 8;
 [L,C] = imsegkmeans(rgb,k);
