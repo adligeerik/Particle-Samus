@@ -18,7 +18,8 @@ k = 10;
 [idx,C] = kmeans(rgb,k);
 
 
-
+%%
+cutSamus(vidFrame)
 %% Kmeans samus
 k = 8;
 [L,C] = imsegkmeans(rgb,k);

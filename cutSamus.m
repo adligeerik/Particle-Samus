@@ -29,19 +29,22 @@ masksamus = reshape(masksamus,[h*w,1]);
 
 nrgb = reshape(rgb,[h*w,color]);
 pixelsInSamus = ones(size(nrgb));
-% kk = 1;
-% for ii = 1: length(pixelsInSamus)
-%     if masksamus(ii) == 1
-%         pixelsInSamus(ii,:) = nrgb(ii,:);
-%         kk = kk + 1;
-%     end
-%     
-% end
+kk = 1;
+for ii = 1: length(pixelsInSamus)
+    if masksamus(ii) == 1
+        kk
+        pixelsInSamus(ii,:) = nrgb(ii,:);
+        kk = kk + 1;
+    else
+        pixelsInSamus(ii,:) = [0,0,0];
+    end
+end
 
-pixelsInSamus = nrgb(logical(masksamus),:);
+%pixelsInSamus = nrgb(logical(masksamus),:);
 
 masksamus = reshape(pixelsInSamus,[h,w, 3]);
-imshow(uint8(masksamus))
+masksamus = uint8(masksamus);
+imshow(masksamus);
 
 end
 
