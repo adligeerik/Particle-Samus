@@ -12,6 +12,7 @@ currAxes = axes;
 
 %Samus 
 rgb = vidFrame(241:288,220:255,:);
+size(rgb)
 imshow(rgb)
 k = 10;
 [idx,C] = kmeans(rgb,k);
