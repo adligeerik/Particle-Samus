@@ -9,4 +9,4 @@ for ii = 1:N
     p(samus(ii)) = p(samus(ii)) + 1/N;
 end
 
-end
+end 
