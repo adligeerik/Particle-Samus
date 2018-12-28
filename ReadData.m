@@ -10,10 +10,40 @@ currAxes = axes;
 %end
 
 
-%Samus
+%Samus 
 rgb = vidFrame(241:288,220:255,:);
 imshow(rgb)
 k = 10;
 [idx,C] = kmeans(rgb,k);
 
-C
+
+
+%% Kmeans samus
+k = 8;
+[L,C] = imsegkmeans(rgb,k);
+J = label2rgb(L,im2double(C));
+subplot(1,2,1)
+imshow(rgb)
+subplot(1,2,2)
+imshow(J)
+
+
+%% Histogram
+
+[h,w,color] = size(J)
+
+J2 = reshape(J,[h*w,color]);
+
+for ii= 1:k
+    kk = 0;
+    for jj = 1:h*w
+        if J2(jj,1) == C(ii,1)
+            kk = kk+1;
+        
+        end
+    end
+Tot(ii) = kk;
+end
+subplot(1,2,1)
+bar(Tot)
+
