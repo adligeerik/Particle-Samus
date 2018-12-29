@@ -21,7 +21,7 @@ X_0 = initialize_particles(height,width,M);
 while hasFrame(vidObj)
     vidFrame = readFrame(vidObj);
     
-    
+    I = reshape(vidFrame,[h*w,color]);
     
     
 end
