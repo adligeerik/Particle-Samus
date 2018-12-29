@@ -23,7 +23,13 @@ while hasFrame(vidObj)
     
     I = reshape(vidFrame,[h*w,color]);
     
+    Xbar = Particle_filter(X,pzx,height,width,binx,biny,currentframe);
     
+    vidFrame(Xbar(:,1,1),Xbar(:,2,1)) = [255,0,0];
+    
+    image(vidFrame, 'Parent', currAxes);
+    currAxes.Visible = 'on';
+    pause(1/vidObj.FrameRate);
 end
 
 
