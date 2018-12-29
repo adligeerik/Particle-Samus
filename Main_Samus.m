@@ -7,6 +7,7 @@ vidFrame = readFrame(vidObj);
 
 % Extraxt Samus pixles
 samus_pixles = cutSamus();
+pzx = pzgivenx(samus_pixles);
 
 % Init values
 M = 100;
@@ -18,14 +19,13 @@ binx = 10;
 X_0 = initialize_particles(height,width,M);
 
 
+
 while hasFrame(vidObj)
     vidFrame = readFrame(vidObj);
     
-    I = reshape(vidFrame,[h*w,color]);
-    
     Xbar = Particle_filter(X,pzx,height,width,binx,biny,currentframe);
     
-    vidFrame(Xbar(:,1,1),Xbar(:,2,1)) = [255,0,0];
+    vidFrame(Xbar(:,1,1),Xbar(:,2,1),:) = [255,0,0];
     
     image(vidFrame, 'Parent', currAxes);
     currAxes.Visible = 'on';
