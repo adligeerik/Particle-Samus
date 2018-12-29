@@ -18,15 +18,14 @@ for m = 1:M
         for jj = 1:biny
             c = probabilitydensity(ii,jj);
             if r =< c
-                Xpos(m,1) = (ii-1)*binpix + 1 + int8(rand*(binpix-1));
-                Xpos(m,2) = (jj-1)*binpiy + 1 + int8(rand*(binpiy-1));
-                break
-            end       
+                x = (ii-1)*binpix + 1 + int8(rand*(binpix-1));
+                y = (jj-1)*binpiy + 1 + int8(rand*(binpiy-1));
+                
+                
         end
-        if r =< c
-            break
-        end
-    end   
+    end
+    
+    
+    
 end
-
 end
