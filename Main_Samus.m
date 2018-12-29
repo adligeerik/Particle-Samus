@@ -16,14 +16,14 @@ binx = 10;
 
 % Init paricles
 [height,width] = size(vidObj);
-X_0 = initialize_particles(height,width,M);
+X = initialize_particles(height,width,M);
 
 
 
 while hasFrame(vidObj)
     vidFrame = readFrame(vidObj);
     
-    Xbar = Particle_filter(X,pzx,height,width,binx,biny,currentframe);
+    Xbar = Particle_filter(X,pzx,height,width,binx,biny,vidFrame);
     
     vidFrame(Xbar(:,1,1),Xbar(:,2,1),:) = [255,0,0];
     
