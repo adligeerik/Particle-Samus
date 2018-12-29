@@ -18,8 +18,6 @@ binx = 10;
 [height,width] = size(vidObj);
 X = initialize_particles(height,width,M);
 
-
-
 while hasFrame(vidObj)
     vidFrame = readFrame(vidObj);
     
