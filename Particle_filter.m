@@ -1,5 +1,5 @@
 function Xbar = Particle_filter(X,pzx,height,width,binx,biny,currentframe)
-M = length(x)
+M = length(X)
 
 X = Control_input(X);
 histogram = makehistogram(X,height,width,binx,biny);

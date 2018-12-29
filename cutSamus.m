@@ -2,6 +2,7 @@ function [pixelsInSamus] = cutSamus()
 
 vidObj = VideoReader('TrackingData/Metroid.mp4');
 vidObj.CurrentTime = 40.1; % 35 start
+vidFrame = readFrame(vidObj);
 
 rgb = vidFrame(241:288,220:255,:);
 
