@@ -11,7 +11,7 @@ samus_pixles = cutSamus();
 pzx = pzgivenx(samus_pixles);
 
 % Init values
-M = 100;
+M = 200;
 biny = 10;
 binx = 10;
 
@@ -31,7 +31,7 @@ Xbar = X';% test
 while hasFrame(vidObj)
     vidFrame = readFrame(vidObj);
     
-    %Xbar = Control_input(Xbar',height,width)';
+    Xbar = Control_input(Xbar',height,width)';
     
     Xbar = Particle_filter(X,pzx,height,width,binx,biny,vidFrame);
     
