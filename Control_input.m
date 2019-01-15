@@ -22,6 +22,6 @@ y(y>height) = height;
 movedX(1,:) = x';
 movedX(2,:) = y';
 
-movedX = movedX';
+
 end
 

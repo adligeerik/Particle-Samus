@@ -31,9 +31,9 @@ Xbar = X';% test
 while hasFrame(vidObj)
     vidFrame = readFrame(vidObj);
     
-    Xbar = Control_input(Xbar,height,width)';
+    Xbar = Control_input(Xbar',height,width)';
     
-    Xbar = Particle_filter(X,pzx,height,width,binx,biny,vidFrame);
+    %Xbar = Particle_filter(X,pzx,height,width,binx,biny,vidFrame);
     
     for ii = 1: M
         vidFrame(Xbar(ii,2),Xbar(ii,1),:) = [255 0 0];
