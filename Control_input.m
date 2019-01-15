@@ -1,9 +1,11 @@
 function [movedX] = Control_input(X,height,width)
 
+X = X';
+
 len = length(X);
 z = zeros(len,1);
 
-stepsize = 5;
+stepsize = 2;
 
 %  uniform distribution (try with gauss dist)
 steps = randi([-stepsize stepsize], [len 2]);
@@ -22,6 +24,6 @@ y(y>height) = height;
 movedX(1,:) = x';
 movedX(2,:) = y';
 
-
+movedX = movedX';
 end
 

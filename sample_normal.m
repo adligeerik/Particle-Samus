@@ -1,5 +1,5 @@
 function [Xbar,mu,Sigma] = sample_normal(X,width,height)
-M = length(X)
+M = length(X);
 %weightedpos = (X(:,1:2).*X(:,3));
 mu          = sum(X(:,1:2))/M;
 Sigma       = cov(X(:,1:2));
@@ -10,8 +10,8 @@ y = Xbar(:,2);
 x(x<1) = 1;
 y(y<1) = 1;
 
-x(x>width) = width;
-y(y>height) = height;
+x(x>width) = width-1;
+y(y>height) = height-1;
 
 Xbar(:,1) = x;
 Xbar(:,2) = y;

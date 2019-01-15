@@ -27,19 +27,19 @@ redpixels(:,:,1) = r;
 redpixels = uint8(redpixels);
 
 
-Xbar = X';% test
+Xbar = X;% test
 while hasFrame(vidObj)
     vidFrame = readFrame(vidObj);
     
-    %Xbar = Control_input(Xbar',height,width)';
+    Xbar = Control_input(Xbar,height,width);
     
-    [Xbar, mu] = Particle_filter(X,pzx,height,width,vidFrame);
+    %[Xbar, mu] = Particle_filter(X,pzx,height,width,vidFrame);
     
     for ii = 1: M
         vidFrame(Xbar(ii,2),Xbar(ii,1),:) = [255 0 0];
     end
     
-    vidFrame(mu) = [0 0 255];
+    %vidFrame(mu) = [0 0 255];
     
     image(vidFrame, 'Parent', currAxes);
     currAxes.Visible = 'on';
