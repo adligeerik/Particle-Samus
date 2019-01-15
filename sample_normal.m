@@ -1,7 +1,7 @@
 function [Xbar,mu,Sigma] = sample_normal(X,width,height)
 M = length(X);
 %weightedpos = (X(:,1:2).*X(:,3));
-mu          = sum(X(:,1:2))/M;
+mu          = round(sum(X(:,1:2))/M);
 Sigma       = cov(X(:,1:2));
 Xbar        =  round(mvnrnd(mu,Sigma,M));
 x = Xbar(:,1);
