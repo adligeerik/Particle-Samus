@@ -11,7 +11,7 @@ samus_pixles = cutSamus();
 pzx = pzgivenx(samus_pixles);
 
 % Init values
-M = 1000;
+M = 3000;
 biny = 10;
 binx = 10;
 
