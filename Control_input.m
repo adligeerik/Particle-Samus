@@ -5,7 +5,7 @@ X = X';
 len = length(X);
 z = zeros(len,1);
 
-stepsize = 10;
+stepsize = 15;
 
 %  uniform distribution (try with gauss dist)
 steps = randi([-stepsize stepsize], [len 2]);

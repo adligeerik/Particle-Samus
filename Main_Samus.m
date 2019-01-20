@@ -37,7 +37,7 @@ while hasFrame(vidObj)
     [Xbar, mu, resamp] = Particle_filter(Xbar,pzx,height,width,vidFrame,resamp);
     
     for ii = 1: M
-        vidFrame(Xbar(ii,2),Xbar(ii,1),:) = [255 0 0];
+        vidFrame(Xbar(ii,2),Xbar(ii,1),:) = [22 250 8];
     end
     vidFrame(mu(2),mu(1),:) = [0 0 255];
     

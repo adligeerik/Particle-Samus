@@ -1,4 +1,7 @@
-function weights = assignweight(positions,pzx,currentframe)
+function [weights, isdep] = assignweight(positions,pzx,currentframe)
+
+threashold = 10;
+isdep = 0;
 
 M = length(positions);
 weights = zeros(1,M);
@@ -6,6 +9,12 @@ for m = 1:M
     rgb = currentframe(positions(m,2),positions(m,1),:);
     weights(m) = pzx(rgb(1)+1,rgb(2)+1,rgb(3)+1);
 end
+
+sum(weights)
+if sum(weights) <= threashold
+    isdep = 1;
+end
+
 weights = weights/sum(weights);
 end
 

@@ -6,7 +6,15 @@ Xbar = zeros(size(X));
 
 X = Control_input(X,height,width);
 [Xbar(:,1:2),mu,Sigma] = sample_normal(X,width,height);
-Xbar(:,3) = assignweight(Xbar(:,1:2),pzx,currentframe);
+[Xbar(:,3), isdep] = assignweight(Xbar(:,1:2),pzx,currentframe);
+
+
+% Check if particle derivated
+if isdep == 1
+    [height,width,rgb] = size(currentframe);
+    M = length(Xbar);
+    Xbar = initialize_particles(height,width,M);
+end
 
 if resamp == resampfreq
     Xbar   = Low_variance_sampler(Xbar);
