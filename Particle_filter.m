@@ -14,6 +14,7 @@ if isdep == 1
     [height,width,rgb] = size(currentframe);
     M = length(Xbar);
     Xbar = initialize_particles(height,width,M);
+    [Xbar(:,3), isdep] = assignweight(Xbar(:,1:2),pzx,currentframe);
 end
 
 if resamp == resampfreq

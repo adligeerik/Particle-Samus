@@ -1,6 +1,6 @@
 function [weights, isdep] = assignweight(positions,pzx,currentframe)
 
-threashold = 10;
+threashold = 150;
 isdep = 0;
 
 M = length(positions);
