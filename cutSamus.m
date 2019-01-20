@@ -26,6 +26,7 @@ for ii= 1:length(C2)
 end
 masksamus = reshape(mask,[h,w,1]);
 
+
 extrapixles = [16 7; 17 7; 16 8; 17 8; 16 9; 17 9; 15 10; 20 10; 18 12; 25 16; 22 31; 22 32; 20 33; 21 33; 22 33; 20 34; 21 34; 22 34];
 masksamus(extrapixles(:,2), extrapixles(:,1)) = 1;
 
