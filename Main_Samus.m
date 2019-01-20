@@ -1,6 +1,6 @@
 % Load data 
 vidObj = VideoReader('TrackingData/Metroid.mp4');
-vidObj.CurrentTime = 40.1; % When the gameplay starts
+vidObj.CurrentTime = 70.1; % When the gameplay starts
 currAxes = axes;
 
 % Read a frame
