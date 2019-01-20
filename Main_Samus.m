@@ -1,6 +1,6 @@
 % Load data 
 vidObj = VideoReader('TrackingData/Metroid.mp4');
-vidObj.CurrentTime = 70.1; % When the gameplay starts
+vidObj.CurrentTime = 35; % When the gameplay starts
 currAxes = axes;
 
 % Read a frame
@@ -29,6 +29,16 @@ redpixels = uint8(redpixels);
 resamp = 1;
 
 Xbar = X;% test
+
+
+newVid = VideoWriter('samus_particle', 'MPEG-4'); % New
+newVid.FrameRate = 30;
+newVid.Quality = 100;
+open(newVid);
+
+
+
+
 while hasFrame(vidObj)
     vidFrame = readFrame(vidObj);
     
@@ -43,8 +53,11 @@ while hasFrame(vidObj)
     
     image(vidFrame, 'Parent', currAxes);
     currAxes.Visible = 'on';
-    pause(1/vidObj.FrameRate);
+    pause(0.1/vidObj.FrameRate);
+    writeVideo(newVid,vidFrame)
 end
+
+close(newVid)
 
 
 
