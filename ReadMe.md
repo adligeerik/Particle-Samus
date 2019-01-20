@@ -11,4 +11,4 @@ To use with other fotage, the probability matrix, pzx, need to be recalculated.
 
 ## Particles on Samus
 
-![alt text](http://url/to/img.png)
+![alt text](https://github.com/adligeerik/Particle-Samus/blob/master/samus_particle.mp4)
