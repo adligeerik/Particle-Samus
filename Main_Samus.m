@@ -1,6 +1,6 @@
 % Load data 
 vidObj = VideoReader('TrackingData/Metroid.mp4');
-vidObj.CurrentTime = 35; % When the gameplay starts
+vidObj.CurrentTime = 40.1; % When the gameplay starts
 currAxes = axes;
 
 % Read a frame
@@ -11,7 +11,7 @@ samus_pixles = cutSamus();
 pzx = pzgivenx(samus_pixles);
 
 % Init values
-M = 1000;
+M = 2000;
 biny = 10;
 binx = 10;
 
