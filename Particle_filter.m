@@ -21,4 +21,6 @@ if resamp == resampfreq
     resamp = 0;
 end
 resamp = resamp + 1;
+
+Xbar = inject_random_particles(Xbar,width,height);
 end
